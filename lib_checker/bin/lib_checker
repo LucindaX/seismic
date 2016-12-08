@@ -6,8 +6,32 @@ connector = LibChecker::Connector.new
 # fetch application gems 
 gems = connector.getGems
 
-puts " Please wait while we retrieve data from server "
+puts "Please wait while we retrieve data from server "
 
 # call to server 
 packages = connector.getPackages
+
+if packages.empty?
+	puts "No system libraries appear to be needed"
+	exit
+end
+
+puts packages.to_s
+
+packages = packages*" "
+
+puts "Do you want to install these libraries ? (y/n)"
+
+x = gets.chomp
+
+if x.downcase == "y"
+	system "sudo apt-get install #{packages}"
+	exit if $?.exitstatus > 0
+elsif x.downcase == "n"
+	puts "Bye !!"
+	exit
+else
+	puts "Invalid input , program will terminate now"
+	exit
+end
 
