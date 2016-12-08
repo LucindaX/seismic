@@ -28,7 +28,7 @@
 	{
 		name: 'Gem3',
 		os:[ {
-			name: 'Ubuntu',
+			distId: 'Ubuntu',
 			release: '13.01',
 			arch: 'x64',
 			packages: ['pack1','pack2','pack3']
@@ -38,7 +38,7 @@
 	{
 		name: 'http',
 		os:[ {
-			name: 'Kubuntu',
+			distId: 'Kubuntu',
 			release: '2.1.1',
 			arch: 'i86',
 			packages: ['libdex2','liden','x-server']
