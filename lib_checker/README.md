@@ -1,39 +1,50 @@
 # LibChecker
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/lib_checker`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+This Gem checks your projects' Gemfile for included gems and runs them against our DB to determine what system libraries need to be installed locally on your machine if any , to avoid excpetions and errors .
 
 ## Installation
 
-Add this line to your application's Gemfile:
+Pull this gem locally to your machine . Make sure you have `Bundler` installed then enter the `lib_checker` directory and run the following to install the dependencies and the `lib_checker` gem locally .
+
+```
+$ bundle install
+
+$ rake install
+
+```
+with these commands you've installed `lib_checker` . This also generates an executable with the same name `lib_checker` to use from command line to check your projects where you have your dependencies listed in the `Gemfile` .
+
+This Gem has been developed for local use and has not been uploaded `rubygems.org`
+
+Make sure to install the gem in the same gemset as you intend if you're using different gemsets for different projects .
+
+If you wish to include this gem in your `Gemfile` pull the gem and add the following to your `Gemfile`
 
 ```ruby
-gem 'lib_checker'
+gem "lib_check", :path => "path/to/gem/directory"
 ```
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install lib_checker
-
 ## Usage
 
-TODO: Write usage instructions here
+To use just navigate to your ruby project directory where the `Gemfile` is present and run the executable :
+
+```
+$ lib_checker
+
+```
+It will read the projects' gems and contacts the server to return the list of system libraries that need to be installed if any . After that you can follow the prompt as it will ask you if you'd like to install these packages on you machine using `apt-get install` and you can choose to do so or not .
 
 ## Development
 
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+This Gem contains two main files `lib/lib_checker.rb` and an executable script `bin/lib_checker` .
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+`lib/lib_checker.rb` contains a class `Connector` which has two methods :
 
-## Contributing
+`getGems` : which uses `Bundler` api to read gems from `Gemfile` .
+`getPackages` : which gets some OS information , along with the gems and sends them to our server to retrieve the packages needed if any .
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/lib_checker. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](contributor-covenant.org) code of conduct.
+`bin/lib_checker` is a script that requires the above class and runs these functions to provide the user with a list of packages ( system libraries ) and prompts the user to install these using `apt-get install`
 
+The code is simple , documented and easy to follow in both files .
 
 ## License
 
