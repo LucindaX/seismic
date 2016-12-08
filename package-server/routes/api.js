@@ -13,8 +13,9 @@ router.post('/gem', function(req, res, next){
 		
 		if(err) return next(err);
 
-		if(record.name) 
+		if(record[0].name){ 
 			return res.status(409).send({ message: 'Aleady in DB' });
+		}
 		else{
 			// saving new gem
 			(new Gem(gem)).save(function(err, record){
