@@ -1,0 +1,21 @@
+{
+	"name": "package-server",
+	"description": "System Packages dependencies for gems",
+	"version": "1.0.0",
+	"repository": {
+		"type": "git",
+		"url": ""
+	},
+	"main": "server.js",
+	"scripts": {
+		"start": "node server.js"
+	},
+	"dependencies": {
+		"express": "4.14.0",
+		"morgan": "^1.6.1",
+		"body-parser": "^1.14.1",
+		"request": "^2.65.0",
+		"mongoose": "4.2.5"
+	},
+	"license": "MIT"
+}
