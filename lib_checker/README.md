@@ -10,7 +10,6 @@ Pull this gem locally to your machine . Make sure you have `Bundler` installed t
 $ bundle install
 
 $ rake install
-
 ```
 with these commands you've installed `lib_checker` . This also generates an executable with the same name `lib_checker` to use from command line to check your projects where you have your dependencies listed in the `Gemfile` .
 
@@ -42,7 +41,7 @@ This Gem contains two main files `lib/lib_checker.rb` and an executable script `
 `getGems` : which uses `Bundler` api to read gems from `Gemfile` .
 `getPackages` : which gets some OS information , along with the gems and sends them to our server to retrieve the packages needed if any .
 
-`bin/lib_checker` is a script that requires the above class and runs these functions to provide the user with a list of packages ( system libraries ) and prompts the user to install these using `apt-get install`
+`bin/lib_checker` : is a script that requires the above class and runs these functions to provide the user with a list of packages ( system libraries ) and prompts the user to install these using `apt-get install`
 
 The code is simple , documented and easy to follow in both files .
 
