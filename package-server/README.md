@@ -12,10 +12,10 @@ $ npm install
 ```
 now you'll have a `node_modules` directory created with the project modules
 
-Next you'll need to provide the database with some mock data in the database if you wish to test the API . There is a seed file included `seed.rb` which has an array of JSON objects representing the Gem model . To populate the DB collection with this seed , run the following :
+Next you'll need to provide the database with some mock data in the database if you wish to test the API . There is a seed file included `seed.json` which has an array of JSON objects representing the Gem model . To populate the DB collection with this seed , run the following :
 
 ```
-$ mongoimport --db pkserver --collection gems --drop --file seed.rb --jsonArray
+$ mongoimport --db pkserver --collection gems --drop --file seed.json --jsonArray
 ```
 
 make sure `mongod` is running which is the mongodb daemon . Run the following command to run the server

@@ -1,0 +1,47 @@
+[
+	{
+		name: 'Gem1',
+		os:[ {
+			distId: 'Ubuntu',
+			release: '12.04',
+			arch: 'i86',
+			packages: ['pack1','pack2','pack3']
+		}]
+	},
+
+	{
+		name: 'Gem2',
+		os:[ {
+			distId: 'Ubuntu',
+			release: '12.22',
+			arch: 'i68',
+			packages: ['pack1','pack2','pack4']
+		},
+		{
+			distId: 'CentOS',
+			release: '10.1',
+			arch: 'x64',
+			packages: ['pack1','pack12','pack4']
+		}]
+	},
+
+	{
+		name: 'Gem3',
+		os:[ {
+			name: 'Ubuntu',
+			release: '13.01',
+			arch: 'x64',
+			packages: ['pack1','pack2','pack3']
+		}]
+	},
+
+	{
+		name: 'http',
+		os:[ {
+			name: 'Kubuntu',
+			release: '2.1.1',
+			arch: 'i86',
+			packages: ['libdex2','liden','x-server']
+		}]
+	}
+]
