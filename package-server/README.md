@@ -59,6 +59,7 @@ Now on to the API . `routes/api.js` contains our express router which has two AP
 	"gems": ["http", "rspec", "fleet"],
 	"machine_info": ["Ubuntu", "12.04", "trusty", "i86"]
 }
+```
 
 `#POST /api/gem` : this saves a new gem to DB . An example of the object sent :
 ```javascript
