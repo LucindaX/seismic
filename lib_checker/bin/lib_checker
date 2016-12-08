@@ -1,0 +1,13 @@
+!#/user/bin/env ruby
+require 'lib_checker'
+
+connector = LibChecker::Connector.new
+
+# fetch application gems 
+gems = connector.getGems
+
+puts " Please wait while we retrieve data from server "
+
+# call to server 
+packages = connector.getPackages
+
