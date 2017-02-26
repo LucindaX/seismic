@@ -53,7 +53,7 @@ This Schema assumes the following structure , that each Gem has a name , and "os
 
 Now on to the API . `routes/api.js` contains our express router which has two APIs of concern .
 
-`#POST /api/packages` : this API is called from our gem with the gem list and we respond wit the packages list . Now this api is supposed to be a GET operation but due to the large number of gems a project can have , size limitations on GET is an issue . So the easiest way to work around that is with a POST request rather than redirecting . Gems are sent along with machine info ( distribution , release , arch ) , and when gems are retrieved we make sure that they correspond to the detected OS and therefore its packages or else we skip it . An example of the object sent :
+`#POST /api/packages` : this API is called from our gem with the gem list and we respond wit the packages list . Gems are sent along with machine info ( distribution , release , arch ) , and when gems are retrieved we make sure that they correspond to the detected OS and therefore its packages or else we skip it . An example of the object sent :
 ```javascript
 { 
 	"gems": ["http", "rspec", "fleet"],
